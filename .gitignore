@@ -1,0 +1,35 @@
+# Node / Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+frontend/*.local
+frontend/.env
+
+# Python / Backend
+backend/venv/
+backend/.venv/
+backend/__pycache__/
+backend/*/__pycache__/
+backend/*/*/__pycache__/
+backend/*.log
+backend/db.sqlite3
+backend/db.sqlite3-journal
+backend/.env
+
+# Environments & Secret Keys
+.env
+.env.local
+
+# IDE / Editor Files
+.idea/
+.vscode/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Project Log Files
+*.log
+logs/
