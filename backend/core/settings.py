@@ -25,11 +25,9 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-3!vwjs#)^sil0z
 DEBUG = os.environ.get('DJANGO_DEBUG', 'True').lower() in ('true', '1', 'yes')
 
 # Allowed hosts configuration
-ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS', '*').split(',') if DEBUG else os.environ.get('DJANGO_ALLOWED_HOSTS', 'generalusedjango.chickenkiller.com,84.235.166.113,localhost,127.0.0.1').split(',')
-
+ALLOWED_HOSTS = ['*']
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -118,7 +116,7 @@ SIMPLE_JWT = {
 CORS_ALLOWED_ORIGINS = [
     "https://general-use.vercel.app"
 ]
-CORS_ALLOW_ALL_ORIGINS = DEBUG  # Allow all only during development
+CORS_ALLOW_ALL_ORIGINS = True  # CORS sorununu kökten çözmek için geçici olarak açıldı
 
 cors_env = os.environ.get('DJANGO_CORS_ALLOWED_ORIGINS')
 if cors_env:
