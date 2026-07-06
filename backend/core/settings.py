@@ -25,8 +25,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-3!vwjs#)^sil0z
 DEBUG = os.environ.get('DJANGO_DEBUG', 'True').lower() in ('true', '1', 'yes')
 
 # Allowed hosts configuration
-ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS', '*').split(',') if DEBUG else os.environ.get('DJANGO_ALLOWED_HOSTS', '').split(',')
-
+ALLOWED_HOSTS = ['84.235.166.113', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -116,7 +115,7 @@ SIMPLE_JWT = {
 }
 
 # CORS Configuration
-CORS_ALLOWED_ORIGIN_REGEXES = [r"^https://.*\.vercel\.app$"]
+CORS_ALLOWED_ORIGIN_REGEXES = [r"https://general-use.vercel.app/"]
 CORS_ALLOW_ALL_ORIGINS = DEBUG  # Allow all only during development
 
 cors_env = os.environ.get('DJANGO_CORS_ALLOWED_ORIGINS')
