@@ -25,7 +25,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-3!vwjs#)^sil0z
 DEBUG = os.environ.get('DJANGO_DEBUG', 'True').lower() in ('true', '1', 'yes')
 
 # Allowed hosts configuration
-ALLOWED_HOSTS = ['84.235.166.113', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS', '*').split(',') if DEBUG else os.environ.get('DJANGO_ALLOWED_HOSTS', 'generalusedjango.chickenkiller.com,84.235.166.113,localhost,127.0.0.1').split(',')
 
 
 # Application definition
