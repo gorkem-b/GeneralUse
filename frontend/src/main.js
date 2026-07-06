@@ -11,11 +11,12 @@ app.use(router)
 
 app.mount('#app')
 
-// Register Service Worker for PWA installability
+// Kill Switch: Unregister any existing Service Workers to destroy the PWA cache trap
 if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js')
-      .then((reg) => console.log('Service Worker registered successfully', reg))
-      .catch((err) => console.error('Service Worker registration failed', err));
+  navigator.serviceWorker.getRegistrations().then(function(registrations) {
+    for (let registration of registrations) {
+      registration.unregister();
+      console.log('Service Worker unregistered successfully');
+    }
   });
 }
