@@ -115,7 +115,9 @@ SIMPLE_JWT = {
 }
 
 # CORS Configuration
-CORS_ALLOWED_ORIGIN_REGEXES = [r"https://general-use.vercel.app/"]
+CORS_ALLOWED_ORIGINS = [
+    "https://general-use.vercel.app"
+]
 CORS_ALLOW_ALL_ORIGINS = DEBUG  # Allow all only during development
 
 cors_env = os.environ.get('DJANGO_CORS_ALLOWED_ORIGINS')

@@ -16,7 +16,7 @@ const apiClient = axios.create({
     // baseURL is the starting URL for all our API calls.
     // import.meta.env.VITE_API_URL lets us change this URL easily based on where 
     // the app is running (e.g., localhost during development, or a real website URL in production).
-    baseURL: import.meta.env.VITE_API_URL || (typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') ? 'http://localhost:8000' : 'https://generalusedjango.chickenkiller.com'),
+    baseURL: import.meta.env.VITE_API_URL || (typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') ? 'http://localhost:8000/api/' : 'https://generalusedjango.chickenkiller.com/api/'),
     
     // timeout tells axios to stop trying if the server doesn't respond in 10 seconds.
     timeout: 10000,
